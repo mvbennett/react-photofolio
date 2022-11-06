@@ -2,19 +2,12 @@ import React from "react";
 
 const Photo = (
   {
-    img, selectedImg, setSelectedImg, photoCardClass, setPhotoCardClass
+    img, setSelectedImg, photoCardClass
   }
 ) => {
   const imgUrl = `../../../assets/images/${img}.jpg`;
-  const handleClick = (event) => {
-    if (selectedImg !== undefined) {
-      const hiddenPhotos = document.getElementsByClassName('hidden');
-      const hiddenPhoto = hiddenPhotos[0];
-      hiddenPhoto.className = 'mini-photo-card';
-    }
+  const handleClick = () => {
     setSelectedImg(img);
-    event.target.className = 'hidden';
-    setPhotoCardClass('mini-photo-card');
   };
   return (
     <div className={photoCardClass}>
