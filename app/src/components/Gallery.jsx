@@ -17,10 +17,9 @@ const Gallery = (
             let component;
             if (img !== selectedImg) {
               component = (
-                <div>
+                <div key={img}>
                   <Photo
                     img={img}
-                    key={img}
                     setSelectedImg={setSelectedImg}
                     selectedImg={selectedImg}
                     photoCardClass={photoCardClass}
@@ -30,7 +29,7 @@ const Gallery = (
               );
             } else {
               component = (
-                <div className="full-div">
+                <div className="full-div" key={img}>
                   <FullPhoto
                     img={selectedImg}
                     setSelectedImg={setSelectedImg}

@@ -4,7 +4,10 @@ const FullPhoto = ({ img, setSelectedImg }) => {
   const imgUrl = `../../../assets/images/${img}.jpg`;
   const handleClick = () => {
     setSelectedImg(undefined);
-  }
+  };
+  const handleLoad = (e) => {
+    e.target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
   return img !== undefined && (
     <div>
       <img
@@ -12,6 +15,7 @@ const FullPhoto = ({ img, setSelectedImg }) => {
         alt=""
         className="full-photo"
         onClick={handleClick}
+        onLoad={handleLoad}
       />
     </div>
   );
